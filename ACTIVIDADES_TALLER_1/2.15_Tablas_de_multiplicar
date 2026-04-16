@@ -1,0 +1,37 @@
+Algoritmo Tablasmultiplicar
+	
+	//Objetivo: Mostrar en pantalla las tablas de multiplicar indicadas por el usuario
+	Escribir sin saltar "Tablas de multiplicar del 1 al 10";
+	Escribir "";
+	
+	//Declarar variables
+	Definir tabla, i, res Como Entero;
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		tabla <- 0;
+		i <- 0;
+		res <- 0;
+		volver <- 'r';
+		
+		//Condicional para que muestre solo las tablas del 1 al 10
+		Para tabla <- 1 Hasta 10 Con Paso 1 Hacer
+			Escribir "";
+			Escribir Sin Saltar "Tabla del ", tabla;
+			Escribir "";
+			//Condicional para la operación
+			Para i <- 1 Hasta 10 Con Paso 1 Hacer
+				res <- tabla * i;
+				Escribir "";
+				Escribir Sin Saltar tabla, " x ", i, " = ", res;
+				Escribir "";
+			FinPara
+		FinPara
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

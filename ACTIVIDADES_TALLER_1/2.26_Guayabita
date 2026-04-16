@@ -1,0 +1,126 @@
+Proceso Guayabita
+	
+	//Objetivo: Jugar Guayabita. Ingresar la cantifad de usuario, el acumulado antes de cada tiro
+	//Tiro inicial, 1 o 6 se pierde y colocar una moneda, otro número apostar el máximo
+	//Acumulado mayor a 0, gana el total apostado si el segundo tiro es mayor que el primero
+
+	// Definir variables 
+	Definir Pn, acum, i Como Entero; //Pn=Cantidad de jugadores acum= acumulado
+	Definir ap, t1, t2 Como Entero; //ap=apuesta t1=tiro1 t2=tiro2
+	Definir volver Como Caracter;
+	
+	Repetir
+		
+		//Iniciar
+		Escribir "--------------------------------";
+		Escribir sin saltar "     BIENVENIDOS AL JUEGO     ";
+		Escribir "";
+		Escribir "--------------------------------";
+		Escribir "";
+		Escribir sin saltar "Cantidad de Jugadores: ";
+		Leer Pn;
+		
+		acum <- pn;
+		
+		Mientras acum > 0 Hacer
+			Para i <- 1 Hasta Pn Hacer
+				Si acum > 0 Entonces
+					Escribir "____________________";
+					Escribir Sin Saltar " TURNO DEL JUGADOR ", i;
+					Escribir "";
+					Escribir "POZO ACTUAL: $", acum;
+					Escribir "Presione una tecla para lanzar el dado...";
+					Esperar Tecla;
+					
+					t1 <- Azar(6) + 1;
+					Escribir "Lanzamiento: ", t1;
+					dados(t1);
+					
+					Si t1 = 1 O t1 = 6 Entonces
+						Escribir "¡MALA SUERTE! Sacaste ", t1, " Pierdes y portas $1";
+						Escribir "";
+						acum <- acum + 1;
+					SiNo
+						Escribir "Sacaste ", t1, " ¿Cuanto deseas aportar? (MAX: ", acum, ")";
+						Escribir "";
+						Leer ap;
+						
+						Mientras ap > acum O ap < 1 Hacer
+							Escribir "Monto invalido. Apuesta entre $1 y $", acum;
+							Leer ap;
+							Escribir "";
+						FinMientras
+						
+						Escribir "Lanzando para superar el ", t1, "...";
+						Esperar Tecla;
+						t2 <- Azar(6) + 1;
+						Escribir "Lanzamiento: ", t2;
+						dados(t2);
+						
+						Si t2 > t1 Entonces
+							Escribir "¡GANASTE! Te llevas $", ap, " del pozo.";
+							Escribir "";
+							acum <- acum - ap;
+						SiNo
+							Escribir "PERDISTE. Tu apuesta de $", ap, " se queda en el pozo.";
+							Escribir "";
+							acum <- acum + ap;
+						FinSi
+					FinSi
+				FinSi
+			FinPara
+		FinMientras
+		
+		Escribir "";
+		Escribir Sin Saltar "El Juego ha Terminado";
+		Escribir "";
+		
+		//Volver a repetir 
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+
+//Diseño de Dados
+Funcion dados(puntos)
+	
+	Escribir " ______";
+	
+	Segun puntos Hacer
+		1:
+			Escribir " |       |";
+			Escribir " |   *   |";
+			Escribir " |       |";
+		2:
+			Escribir " | *     |";
+			Escribir " |       |";
+			Escribir " |     * |";
+			
+		3:
+			Escribir " | *     |";
+			Escribir " |   *   |";
+			Escribir " |     * |";
+			
+		4:
+			Escribir " | * * |";
+			Escribir " |     |";
+			Escribir " | * * |";
+			
+		5:
+			Escribir " | * * |";
+			Escribir " |  *  |";
+			Escribir " | * * |";
+			
+		6:
+			Escribir " | * * |";
+			Escribir " | * * |";
+			Escribir " | * * |";
+	FinSegun
+	
+	Escribir " ______";
+	
+FinFuncion
+	

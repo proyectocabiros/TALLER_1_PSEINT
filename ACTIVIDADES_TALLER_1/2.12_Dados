@@ -1,0 +1,55 @@
+Algoritmo DadosParques
+	
+	//Objetivo: Mostrar dos número aleatorios del 1 al 6. 
+	//Sacar pares: Volver a lanzar o ¡Saca una ficha!. Sacar impares: ¡Lanza de nuevo!
+	Escribir sin saltar "Dados";
+	Escribir "";
+	
+	//Declarar variables
+	Definir D1, D2 Como Entero; //D1=Dado 1 o D2=Dado 2 porque en el parques se juega con dos dados
+	Definir inpares Como Entero; //intentos de pares
+	Definir new Como Logico; // nuevo lanzamiento
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		D1 <- 0;
+		D2 <- 0;
+		inpares <- 0;
+		new <- Verdadero;
+		volver <- 'r';
+		
+		//Condicionales
+		Mientras (new Y inpares < 3) Hacer
+			D1 <- Azar(6) ;
+			D2 <- Azar(6);
+			Escribir "";
+			Escribir Sin Saltar "Lanzamiento: ", D1, " y ", D2;
+			Escribir "";
+			Si D1 = D2 Entonces
+				inpares <- inpares + 1;
+				Si inpares = 3 Entonces
+					Escribir "";
+					Escribir Sin Saltar "Suertudx, ¡Saca una ficha!";
+					Escribir "";
+					new <- Falso;
+				SiNo
+					Escribir "";
+					Escribir Sin Saltar "Pares, lanza de nuevo";
+					Escribir "";
+				FinSi
+			SiNo
+				Escribir "";
+				Escribir Sin Saltar "Impares, lanza de nuevo";
+				Escribir "";
+				new <- Falso;
+			FinSi
+			Escribir "";
+		FinMientras
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

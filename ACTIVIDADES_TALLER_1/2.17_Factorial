@@ -1,0 +1,60 @@
+Algoritmo Factorial
+	
+	//Objetivo: Encontrar el factorial de un número de 0 a 12 
+	//Si se supero el factorial es infinito
+	Escribir sin saltar "Factorial del número";
+	Escribir "";
+	
+	//Declarar variables
+	Definir num, i Como Entero;
+	Definir res Como Real;
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		num <- 0;
+		i <- 0;
+		res <- 0.0;
+		volver <- 'r';
+		
+		//Selección de número
+		Escribir "";
+		Escribir Sin Saltar "Ingrese un número ";
+		Leer num;
+		Escribir "";
+		
+		//Condicional para que solo sea entero
+		Si num < 0 Entonces
+			
+			Escribir "";
+			Escribir Sin Saltar "Error: Los factoriales son positivos";
+			Escribir "";
+			
+		SiNo
+			
+			Si num > 12 Entonces
+				Escribir "";
+				Escribir Sin Saltar "El factorial es infinito";
+				Escribir "";
+			SiNo
+				//Condicional para indicar desde donde comenzara la multiplicación
+				res <- 1;	
+				//Condicional para multiplicar el número ingersado por el usuario
+				Para i <- 1 Hasta num Con Paso 1 Hacer
+					res <- res * i;
+				FinPara
+				
+				Escribir "";
+				Escribir Sin Saltar "El factorial de ", num, " es: ", res;
+				Escribir "";
+				
+			FinSi
+			
+		FinSi
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

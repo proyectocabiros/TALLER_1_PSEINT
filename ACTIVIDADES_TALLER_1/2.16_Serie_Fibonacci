@@ -1,0 +1,60 @@
+Algoritmo SerieFibonacci
+	
+	//Objetivo: Solicitar la cantidad de números para ver la serie de Fibonacci
+	//Esta serie es la suma de los números anteriores empieza de 0 y 1
+	//Ej: 0,1,1 se traduce como 0 + 1 = 1 , el siguiente número seria 1,1,2 lo que se traduce como 1 + 1 = 2 y asi sucesivamente hasta formar la serie hasta el número deseado
+	Escribir sin saltar "Serie de Fibonacci";
+	Escribir "";
+	
+	//Declarar variables
+	Definir n, i Como Entero; //n= es la cantidad de números (Límite)
+	Definir p1, p2, p3 Como Real; //p1, p2, p3 es el proceso de la serie
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		n <- 0;
+		i <- 0;
+		p1 <- 0.0;
+		p2 <- 0.0;
+		p3 <- 0.0;
+		volver <- 'r';
+		
+		//Selección de número
+		Escribir "";
+		Escribir Sin Saltar "¿Cuántos números desea ver? ";
+		Leer n;
+		Escribir "";
+		
+		//Condicional para que solo sean números positivos
+		Si n > 0 Entonces
+			p1 <- 0;
+			p2 <-1;
+			i <- 1; 
+			Escribir "";
+			Escribir Sin Saltar "La serie es: "; //En este caso solo positivos ya que esta serie se compone de números naturales positivos
+			Escribir "";
+			
+			Mientras i <= n Hacer
+				//Condicional para que existan los saltos de información
+				Escribir p1;
+				p3 <- p1 + p2;
+				p1 <- p2;
+				p2 <- p3;
+				
+				//Condicional para que no se repita el mismo número y se realice la suma
+				i <- i + 1;
+			FinMientras
+			
+		SiNo
+			Escribir "";
+			Escribir Sin Saltar "Error: Solo números positivos"; //En este caso solo positivos ya que esta serie se compone de números naturales positivos
+			Escribir "";
+		FinSi
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

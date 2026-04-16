@@ -1,0 +1,124 @@
+Algoritmo MenuFiguras
+	
+	//Objetivo: Diseñe un algoritmo que muestre un menú que seleccione si es un Triángulo, rectángulo y círculo
+	//Pedir los datos y calcular área y perímetro
+	//Área en unidades cuadradas y perímetro en unidades simples
+	Escribir sin saltar "Menú de Figuras";
+	Escribir "";
+	
+	//Declarar variables
+	Definir menu Como Entero;
+	Definir b, h, r Como Real;
+	Definir lB, lC Como Real;
+	Definir area, perimetro Como Real;
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		menu <- 0;
+		b <- 0.0;
+		h <- 0.0;
+		r <- 0.0;
+		lB <- 0.0;
+		lC <- 0.0;
+		area <- 0.0;
+		perimetro <- 0.0;
+		volver <- 'r';
+		
+		//Entrada de datos
+		Escribir Sin Saltar "____________________";
+		Escribir "";
+		Escribir Sin Saltar " Menú de Figuras :D ";
+		Escribir "";
+		Escribir Sin Saltar "1. Triángulo";
+		Escribir "";
+		Escribir Sin Saltar "2. Rectángulo";
+		Escribir "";
+		Escribir Sin Saltar "3. Círculo";
+		Escribir "";
+		Escribir Sin Saltar "____________________";
+		Escribir "";
+		Escribir Sin Saltar "Digite una opción del menú";
+		Leer menu;
+		
+		//Condicionales
+		Segun menu Hacer
+			1:
+				//Entrada de datos
+				Escribir Sin Saltar "Digite la base: ";
+				Leer b;
+				Escribir Sin Saltar "Digite la altura: ";
+				Leer h;
+				Escribir Sin Saltar "Digite los otros dos lados: ";
+				Leer lB, lC;
+				//Proceso de datos
+				Si (b <> 0) Y (h <> 0) Y (lB <> 0) Y (lC <> 0) Entonces
+					area <- (b*h)/2;
+					perimetro <- b+lB+lC;
+					Escribir "";
+					Escribir Sin Saltar "La figura es triángulo";
+					Escribir "";
+				SiNo
+					Escribir "";
+					Escribir "Error: Los datos deben ser mayor a 0 y NO números negativos";
+					Escribir "";
+				Fin Si
+				//Salida de datos
+				Escribir Sin Saltar "El área es: ", area, " Unidades cuadradas" ;
+				Escribir "";
+				Escribir Sin Saltar "El perímetro es: ", perimetro, " Unidades simples";
+				Escribir "";
+			2:
+				//Entrada de datos
+				Escribir Sin Saltar "Digite la base: ";
+				Leer b;
+				Escribir Sin Saltar "Digite la altura: ";
+				Leer h;
+				//Proceso de datos
+				Si (b <> 0) Y (h <> 0) Entonces
+					area <- b*h;
+					perimetro <- 2*(b*h);
+					Escribir "";
+					Escribir Sin Saltar "La figura es rectángulo";
+					Escribir "";
+				SiNo
+					Escribir "";
+					Escribir "Error: Los datos deben ser mayor a 0 y NO números negativos";
+					Escribir "";
+				Fin Si
+				//Salida de datos
+				Escribir Sin Saltar "El área es: ", area, " Unidades cuadradas";
+				Escribir "";
+				Escribir Sin Saltar "El perímetro es: ", perimetro, " Unidades simples";
+				Escribir "";
+			3:
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el radio: ";
+				Leer r;
+				//Proceso de datos
+				Si r <> 0 Entonces
+					area <- PI * (r ^ 2);
+					perimetro <- 2 * PI * r;
+					Escribir "";
+					Escribir Sin Saltar "La figura es círculo";
+					Escribir "";
+				SiNo
+					Escribir "";
+					Escribir "Error: Los datos deben ser mayor a 0 y NO números negativos";
+					Escribir "";
+				Fin Si
+				//Salida de datos
+				Escribir Sin Saltar "El área es: ", area, " Unidades cuadradas";
+				Escribir "";
+				Escribir Sin Saltar "El perímetro es: ", perimetro, " Unidades simples";
+				Escribir "";
+			De Otro Modo:
+				Escribir Sin Saltar "La opción no está en el Menú";
+		Fin Segun
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

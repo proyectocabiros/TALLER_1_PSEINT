@@ -1,0 +1,79 @@
+Algoritmo Menucolores
+	
+	//Objetivo: Diseñe un algoritmo que muestre un menú: Amarrillo = 1, azul = 2, rojo = 3.
+	//Luego solicite al usuario digitar dos de estos números para descifrar la combinación.
+	//El resultado mostrado en pantalla es el resultado de combinación.
+	Escribir sin saltar "Menú de Colores";
+	Escribir "";
+	
+	//Declarar variables
+	Definir num1 Como Entero;
+	Definir num2 Como Entero;
+	Definir resultado Como Caracter;
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		num1 <- 0;
+		num2 <- 0;
+		resultado <- "";
+		
+		//Entrada de datos
+		Escribir Sin Saltar "____________________";
+		Escribir "";
+		Escribir Sin Saltar " Menú de Colores :D ";
+		Escribir "";
+		Escribir Sin Saltar "Amarillo 1";
+		Escribir "";
+		Escribir Sin Saltar "Azul 2";
+		Escribir "";
+		Escribir Sin Saltar "Rojo 3";
+		Escribir "";
+		Escribir Sin Saltar "____________________";
+		Escribir "";
+		Escribir Sin Saltar "Digite el primer número: ";
+		Leer num1;
+		Escribir Sin Saltar "Digite el segundo número: ";
+		Leer num2;
+		
+		//Condicionales
+		//1:Validación de color dentro del menú
+		Si (num1 <= 3 o num1 > 0) y (num2 <= 3 y num2 > 0) Entonces
+			Escribir Sin Saltar "Color dentro del Menú";
+			Escribir "";
+			//2: Mezcla de mismos colores
+			Si (num1 = 1) y (num2 = 1) Entonces
+				Escribir "El Color es Amarillo";
+			SiNo
+				Si (num1 = 2) y (num2 = 2) Entonces
+					Escribir "El Color es Azul";
+				SiNo
+					Si (num1 = 3) y (num2 = 3) Entonces
+						Escribir "El Color es Rojo";
+					SiNo
+						//3: Mezcla de colores diferentes
+						Si (num1 = 1 o num1 = 2 ) y (num2 = 2 o num2 = 1) Entonces
+							Escribir "El Color es Verde";
+						SiNo
+							Si (num1 = 1 o num1 = 3 ) y (num2 = 3 o num2 = 1) Entonces
+								Escribir "El Color es Naranja";
+							SiNo
+								Si (num1 = 2 o num1 = 3 ) y (num2 = 3 o num2 = 2) Entonces
+									Escribir "El Color es Morado/Violeta";
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		SiNo
+			//Salida de datos
+			Escribir Sin Saltar "Color Fuera del Menú";
+			Escribir "";
+		FinSi
+		
+		//Volver al menú
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

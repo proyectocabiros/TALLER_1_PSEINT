@@ -1,0 +1,42 @@
+Algoritmo Dividirvalores
+	
+	//Objetivo
+	Escribir sin saltar "Dividir dos variables";
+	Escribir "";
+	
+	//Declarar variables
+	Definir num1 Como Entero;
+	Definir num2 Como Entero;
+	Definir res Como Entero;
+	Definir volver Como Caracter;
+	
+	Repetir
+		//Iniciar variables
+		num1 <- 0;
+		num2 <- 0;
+		volver <- 'r';
+		
+		//Entrada de datos
+		Escribir Sin Saltar "Digite el primer número: ";
+		Leer num1;
+		Escribir Sin Saltar "Digite el segundo número: ";
+		Leer num2;
+		
+		Si num2 <> 0 Entonces
+			//Proceso de datos
+			res= num1 / num2;
+			
+			//Salida de datos
+			Escribir Sin Saltar "La división de los números es: ", res;
+			Escribir "";
+		SiNo
+			//Salida de datos
+			Escribir Sin Saltar "Imposible la división por 0";
+			Escribir "";
+		FinSi
+		
+		//Volver al menú
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

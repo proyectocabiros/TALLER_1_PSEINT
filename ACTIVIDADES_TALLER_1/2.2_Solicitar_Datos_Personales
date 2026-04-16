@@ -1,0 +1,49 @@
+Algoritmo DatosPersonales
+	
+	//Objetivo: Solicitar datos personales
+	Escribir sin saltar "Mostrar su nombre, sexo, edad, salario y si tiene vehículo";
+	Escribir "";
+	
+	//Declarar variables
+	Definir nombre Como Caracter;
+	Definir sexo Como Caracter;
+	Definir edad Como Entero;
+	Definir salario Como Real;
+	Definir transporte Como Logico;
+	Definir volver Como Caracter;
+	
+	Repetir
+		//Iniciar variables
+		nombre <- "";
+		sexo <- "";
+		edad <- 0;
+		salario <- 0.0;
+		transporte <- Falso;
+		volver <- 'r';
+		
+		//Entrada de datos
+		Escribir Sin Saltar "Digite su nombre: ";
+		Leer nombre;
+		Escribir Sin Saltar "Digite su sexo (F o M): ";
+		Leer sexo;
+		Escribir "Digite su edad: ";
+		Leer edad;
+		Escribir "Digite su salario (con centavos): ";
+		Leer salario;
+		Escribir "Tiene vehículo (1=Si, 0=No): "; 
+		Leer transporte;
+		
+		//Salida de datos
+		Escribir "";
+		Escribir "Su nombre es: ", nombre;
+		Escribir "Su sexo es: ", sexo;
+		Escribir "Su edad es: ", edad, " años";
+		Escribir "Su salario es: ", salario, " pesos";
+		Escribir "¿Tienes vehículo?:", transporte;
+		Escribir "";
+		
+		//Volver al menú
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

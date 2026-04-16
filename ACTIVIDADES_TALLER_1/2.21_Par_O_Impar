@@ -1,0 +1,108 @@
+Proceso Serieparoimpar
+	
+	//Objetivo: Solicitar 2 números, seleccionar impar o par
+	//número menor hasta número mayor
+	Escribir sin saltar "___ Serie Par o Impar ___";
+	Escribir "";
+		
+	// Definir variables 
+	Definir num1, num2, i Como Entero;
+	Definir menu ,aux Como Entero; 
+	Definir volver Como Caracter;
+	
+	//Iniciar Variables
+	num1 <- 0;
+	num2 <- 0;
+	i <- 0;
+	aux <- 0;
+	menu <- 0;
+	volver <- 'r';
+	
+	Repetir
+		
+		Escribir sin saltar "¿Qué serie desea?";
+		Escribir "";
+		Escribir sin saltar "1. Par";
+		Escribir "";
+		Escribir sin saltar "2. Impar";
+		Escribir "";
+		Leer menu;
+		Escribir "";
+		
+		//Condicional: Menu 
+		Segun menu Hacer
+			1:
+				Escribir sin saltar " ___ Serie Par ___ ";
+				Escribir "";
+				Escribir sin saltar "Ingrese el primer número: ";
+				Leer num1;
+				Escribir "";
+				Escribir sin saltar "Ingrese el segundo número: ";
+				Leer num2;
+				Escribir "";
+				
+				//Condicional ordenar de menor a mayor
+				Si num1 > num2 Entonces
+					aux <- num1;
+					num1 <- num2;
+					num2 <- aux;
+				SiNo
+					Si num2 < num1 Entonces
+						aux <- num2;
+						num2 <- num1;
+						num1 <- aux;
+					FinSi
+				FinSi
+				
+				//Condicional para serie
+				Para i <- num1 Hasta num2 Hacer
+					Si i MOD 2 = 0 Entonces
+						Escribir i;
+					FinSi
+				FinPara
+				
+			2:
+				Escribir sin saltar " ___ Serie Impar ___ ";
+				Escribir "";
+				Escribir sin saltar "Ingrese el primer número: ";
+				Leer num1;
+				Escribir "";
+				Escribir sin saltar "Ingrese el segundo número: ";
+				Leer num2;
+				Escribir "";
+				
+				//Condicional ordenar de menor a mayor
+				Si num1 > num2 Entonces
+					aux <- num1;
+					num1 <- num2;
+					num2 <- aux;
+				SiNo
+					Si num2 < num1 Entonces
+						aux <- num2;
+						num2 <- num1;
+						num1 <- aux;
+					FinSi
+				FinSi
+				
+				//Condicional para serie
+				Para i <- num1 Hasta num2 Hacer
+					Si i MOD 2 <> 0 Entonces
+						Escribir i;
+					FinSi
+				FinPara
+				
+			De Otro Modo:
+				Escribir "";
+				Escribir sin saltar "Opción no válida";
+				Escribir "";
+		FinSegun
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+

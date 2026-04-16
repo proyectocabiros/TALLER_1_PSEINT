@@ -1,0 +1,80 @@
+Proceso VectorXposiciones
+	
+	//Objetivo: Solicitar n posiciones por el usuario
+	//luego ordenar variables e imprimir
+
+	// Definir variables 
+	Definir num, i, j, v Como Entero; //num=cantidad de posiciones
+	Definir aux, menu Como Entero;
+	Definir volver Como Caracter;
+	
+	//Condición llenar datos
+	Escribir "";
+	Escribir sin saltar "Definir la posición: ";
+	Escribir "";
+	Leer num;
+	Dimension v[num]; //V=vector
+	
+	Repetir
+		
+		Para i <- 0 Hasta num-1 Hacer
+			Escribir "";
+			Escribir sin saltar "valor ", i + 1, ": ";
+			Escribir "";
+			Leer v[i];			
+		FinPara
+		
+		//Condición orden
+		Escribir sin saltar "Elegir Orden";
+		Escribir "";
+		Escribir sin saltar "1. Ascendente";
+		Escribir "";
+		Escribir sin saltar "2. Descendente";
+		Escribir "";
+		Leer menu;
+	
+		Segun menu Hacer
+			1:
+				Para i<-0 Hasta num-2 Hacer
+					Para j <- 0 Hasta num-2 Hacer
+						Si v[j] > v[j+1] Entonces
+							aux <- v[j];
+							v[j] <- v[j+1];
+							v[j+1] <- aux;
+						FinSi
+					FinPara
+				FinPara
+				Escribir sin saltar "Vector Ordenado de forma Ascendente";
+				Escribir "";
+			2:
+				Para i<-0 Hasta num-2 Hacer
+					Para j <- 0 Hasta num-2 Hacer
+						Si v[j] < v[j+1] Entonces
+							aux <- v[j];
+							v[j] <- v[j+1];
+							v[j+1] <- aux;
+						FinSi
+					FinPara
+				FinPara
+				Escribir sin saltar "Vector Ordenado de forma Descendente";
+				Escribir "";
+			De Otro Modo:
+				Escribir sin saltar "Error: Opción fuera del menú";
+				Escribir "";
+		FinSegun
+		
+		//Condicional imprimir
+		Para i <- 0 Hasta num-1 Hacer
+			Escribir v[i], " " Sin Saltar;
+		FinPara
+		Escribir "";
+		
+		//Volver a repetir 
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+

@@ -1,0 +1,113 @@
+Algoritmo TipodeTriangulo
+	
+	//Objetivo: Encontrar el tipo de triángulo que se tiene, mostrando un menú que pida ángulos o lados y se de la opción para escoger uno de los dos.
+	//3 ángulos = 180° o ángulo cortos mayor a la longitud del mas largo
+	//Mostrar los tipos de triángulo en la pantalla
+	Escribir sin saltar "Menú de Triángulos";
+	Escribir "";
+	
+	//Declarar variables
+	Definir opc Como Entero; //Opción
+	Definir A, B, C Como Real; 
+	Definir triangulo Como Logico; 
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		opc <- 0;
+		A <- 0.0;
+		B <- 0.0;
+		C <- 0.0;
+		triangulo <- Verdadero;
+		volver <- 'r';
+		
+		//Entrada de datos
+		Escribir Sin Saltar "______________________";
+		Escribir "";
+		Escribir Sin Saltar " Tipo de triángulo :)  ";
+		Escribir "";
+		Escribir Sin Saltar "____________________";
+		Escribir "";
+		Escribir "1. Ingresar lados";
+		Escribir "2. Ingresar ángulos";
+		Leer opc;
+		
+		//Condicionales
+		Segun opc Hacer
+			1:
+				Escribir "";
+				Escribir "Ingresar los tres lados: ";
+				Leer A, B, C;
+				Si (A<>0) Y (B<>0) Y (C<>0) Entonces
+					Si (A+B > C) Y (A+C > B) Y (B+C > A) Entonces
+						triangulo <- Verdadero;
+						Si (A=B) Y (A=C) Y (B=C) Entonces
+							Escribir "";
+							Escribir "Triángulo Equilátero";
+							Escribir "";
+						SiNo
+							Si (A=B) O (A=C) O (B=C) Entonces
+								Escribir "";
+								Escribir "Triángulo Isósceles";
+								Escribir "";
+							SiNo
+								Escribir "";
+								Escribir "Triángulo Escaleno";
+								Escribir "";
+							Fin Si
+						Fin Si
+					SiNo
+						Escribir "";
+						Escribir "Error: La suma de los dos lados cortos debe ser mayor al lado largo";
+						triangulo <- Falso;
+						Escribir "";
+					Fin Si
+				SiNo
+					Escribir "";
+					Escribir "Error: Los lados deben ser mayores a 0";
+					Escribir "";
+				Fin Si
+			2:
+				Escribir "";
+				Escribir "Ingresar los tres ángulos: ";
+				Leer A, B, C;
+				Si (A<>0) Y (B<>0) Y (C<>0) Entonces
+					Si (A + B + C) = 180 Entonces
+						triangulo <- Verdadero;
+						Si (A<90) Y (B<90) Y (C<90) Entonces
+							Escribir "";
+							Escribir "Triángulo Acutángulo";
+							Escribir "";
+						SiNo
+							Si (A=90) O (B=90) O (C=90) Entonces
+								Escribir "";
+								Escribir "Triángulo Rectángulo";
+								Escribir "";
+							SiNo
+								Escribir "";
+								Escribir "Triángulo Obtusángulo";
+								Escribir "";
+							FinSi
+						FinSi
+					SiNo
+						Escribir "";
+						Escribir "Error: Los ángulos deben sumar exactamente 180°";
+						Escribir "";
+					FinSi
+				SiNo
+					Escribir "";
+					Escribir "Error: Los ángulos deben ser mayor a 0";
+					Escribir "";
+				Fin Si
+			De Otro Modo:
+				Escribir "";
+				Escribir "No existe en el menú";
+				Escribir "";
+		Fin Segun
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

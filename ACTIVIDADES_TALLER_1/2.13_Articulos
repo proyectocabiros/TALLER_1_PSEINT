@@ -1,0 +1,93 @@
+Algoritmo Articulos
+	
+	//Objetivo: Diseñar un algoritmo donde de nombre, valor , cantidad a llevar y si es o no de la canasta familiar.
+	//No es de la canasta familiar se le suma el IVA (19%)
+	Escribir sin saltar "Mercado";
+	Escribir "";
+	
+	//Declarar variables
+	Definir articulo Como Caracter;
+	Definir pu, cant, subt, total  Como Real; //pu=valor de la unidad cant=cantidad a llevar subt= es el subtotal sin agregrar el Iva Total=Con el IVA
+	Definir cbf Como Entero; //cbf=Canasta básica familiar
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		articulo <- "";
+		pu <- 0.0;
+		cant <- 0.0;
+		subt <- 0.0;
+		total <- 0.0;
+		cbf <- 0;
+		volver <- 'r';
+		
+		//Condicionales
+		Escribir "";
+		Escribir Sin Saltar "Ingrese el nombre del artículo: ";
+		Leer articulo;
+		Escribir "";
+		
+		Escribir "";
+		Escribir Sin Saltar "Ingrese el valor por unidad: ";
+		Leer pu;
+		Escribir "";
+		Mientras (pu <= 0) Hacer
+			Escribir "";
+			Escribir Sin Saltar "Error: El precio debe ser mayor a 0";
+			Leer pu;
+			Escribir "";
+		FinMientras
+		
+		Escribir "";
+		Escribir Sin Saltar "Ingrese la cantidad a llevar: ";
+		Leer cant;
+		Escribir "";
+		Mientras (cant <= 0) Hacer
+			Escribir "";
+			Escribir Sin Saltar "Error: La cantidad debe ser al menos 1";
+			Leer cant;
+			Escribir "";
+		FinMientras
+		
+		Escribir "";
+		Escribir Sin Saltar "¿El producto es de la canasta familiar?: ";
+		Escribir "";
+		Escribir Sin Saltar "1. Si";
+		Escribir "";
+		Escribir Sin Saltar "2. No";
+		Escribir "";
+		Leer cbf;
+		Escribir "";
+		
+		subt <- pu * cant;
+		
+		//Aplicar IVA
+		Si (cbf = 2) Entonces
+			total <- (subt * 19) / 100;
+			Escribir "";
+			Escribir Sin Saltar "El producto tiene IVA. Se aplica el 19%";
+			Escribir "";
+		SiNo
+			total <- subt;
+			Escribir "";
+			Escribir Sin Saltar "El producto esta exento de IVA";
+			Escribir "";
+		FinSi
+		
+		//Resultado final
+		Escribir "";
+		Escribir "___________________";
+		Escribir Sin Saltar " Resumen de Compra ";
+		Escribir "Artículo: ", articulo;
+		Escribir "Cantidad: ", cant;
+		Escribir "Subtotal a pagar: $", subt;
+		Escribir "Total a pagar: $", total;
+		Escribir "___________________";
+		Escribir "";
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

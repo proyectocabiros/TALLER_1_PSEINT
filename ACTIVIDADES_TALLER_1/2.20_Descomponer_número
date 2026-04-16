@@ -1,0 +1,58 @@
+Proceso Descomponer
+	
+	//Objetivo: Solicitar un número, lo descomponga y muestre en pantalla los digitos
+	Escribir sin saltar "___ Mención de Dígitos ___";
+	Escribir "";
+		
+	// Definir variables 
+	Definir num, aux Como Entero;
+	Definir dig, cont Como Entero; //dig=Digito y cont=Contar
+	Definir volver Como Caracter;
+	
+	//Iniciar Variables
+	num <- 0;
+	dig <- 0;
+	cont <- 0;
+	aux <- 0;
+	volver <- 'r';
+	
+	Repetir
+		
+		Escribir sin saltar "Ingrese un número";
+		Leer num;
+		Escribir "";
+		
+		//Condicion1: número
+		aux <- num;
+		cont <- 0;
+		
+		//Condicion2: Contar los digitos (los descompone de derecha a izquierda)
+		Si aux = 0 Entonces
+			cont <- 1; //Esto para que cuente el 0 como dígito
+		SiNo
+			
+			Mientras aux > 0 Hacer
+				dig <- aux MOD 10;
+				aux <- trunc(aux/10);
+				cont <- cont + 1;
+				
+				//Aquí mostrara el proceso de descomponer y el resultado que va quedando
+				Escribir "";
+				Escribir Sin Saltar "Dígito extraído: ", dig, " y queda: ", aux; 
+				Escribir "";
+			FinMientras
+		FinSi
+		
+		Escribir "";
+		Escribir Sin Saltar "El número: ", num, " tiene ", cont, " dígitos";
+		Escribir "";
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+

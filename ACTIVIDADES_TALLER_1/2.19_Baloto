@@ -1,0 +1,101 @@
+Proceso Baloto
+	
+	//Objetivo: Solicitar una acción y mostrar 6 números aleatorios entre 1 y 45 (sin repetir)
+	//Organizar de menor a mayor
+	Escribir sin saltar "___ Sorteo Baloto ___";
+	Escribir "";
+	Escribir sin saltar "Generando los números de la suerte";
+	Escribir "";
+	
+	// Definir variables 
+	Definir num1, num2, num3, num4, num5, num6 Como Entero;
+	Definir aux, i Como Entero;
+	Definir volver Como Caracter;
+	
+	//Iniciar Variables
+	num1 <- 0;
+	num2 <- 0;
+	num3 <- 0;
+	num4 <- 0;
+	num5 <- 0;
+	num6 <- 0;
+	aux <- 0;
+	i <- 0;
+	volver <- 'r';
+	
+	Repetir
+		//Condicion1: Generar los 6 números al azar (sin repetir)
+		num1 <- Aleatorio(1,45);
+		
+		num2 <- Aleatorio(1,45);
+		Mientras num2 = num1 Hacer
+			num2 <- Aleatorio(1,45);
+		FinMientras
+		
+		num3 <- Aleatorio(1,45);
+		Mientras num3 = num1 o num3 = num2 Hacer
+			num3 <- Aleatorio(1,45);
+		FinMientras
+		
+		num4 <- Aleatorio(1,45);
+		Mientras num4 = num1 o num4 = num2 o num4 = num3 Hacer
+			num4 <- Aleatorio(1,45);
+		FinMientras
+		
+		num5 <- Aleatorio(1,45);
+		Mientras num5 = num1 o num5 = num2 o num5 = num3 o num5 = num4 Hacer
+			num5 <- Aleatorio(1,45);
+		FinMientras
+		
+		num6 <- Aleatorio(1,45);
+		Mientras num6 = num1 o num6 = num2 o num6 = num3 o num6 = num4 o num6 = num5 Hacer
+			num6 <- Aleatorio(1,45);
+		FinMientras
+		
+		//Condicional ordenar los números
+		Para i <- 1 Hasta 5 Hacer
+			Si (num1 > num2) Entonces
+				aux <- num1; 
+				num1 <- num2;
+				num2 <- aux;
+			FinSi
+			Si (num2 > num3) Entonces
+				aux <- num2; 
+				num2 <- num3;
+				num3 <- aux;
+			FinSi
+			Si (num3 > num4) Entonces
+				aux <- num3; 
+				num3 <- num4;
+				num4 <- aux;
+			FinSi
+			Si (num4 > num5) Entonces
+				aux <- num4; 
+				num4 <- num5;
+				num5 <- aux;
+			FinSi
+			Si (num5 > num6) Entonces
+				aux <- num5; 
+				num5 <- num6;
+				num6 <- aux;
+			FinSi
+			
+		FinPara
+		
+		Escribir "";
+		Escribir Sin Saltar "La surte dio los numeros: ";
+		Escribir "";
+		Escribir num1, " - ", num2, " - ", num3, " - ", num4, " - ", num5, " - ", num6;
+		Escribir "";
+		Escribir Sin Saltar "¡Buena Suerte!";
+		Escribir "";
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+

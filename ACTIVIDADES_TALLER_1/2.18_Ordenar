@@ -1,0 +1,111 @@
+Proceso Ordenamiento
+	
+	//Objetivo: Ordenar de formar ascendente o descendente 3 números ingresados por el ususario 
+	Escribir sin saltar "Organizar Números";
+	Escribir "";
+	
+	// Definir variables 
+	Definir num1, num2, num3, aux como real;
+	Definir menu, i Como Entero;
+	Definir volver Como Caracter;
+	
+	//Iniciar Variables
+	num1 <- 0.0;
+	num2 <- 0.0;
+	num3 <- 0.0;
+	aux <- 0.0;
+	i <- 0;
+	menu <- 0;
+	volver <- 'r';
+	
+	Repetir
+		//Ingresar números
+		Escribir sin saltar "Escriba el primer número: ";
+		Leer num1; 
+		Escribir sin saltar "Escriba el segundo número: ";
+		leer num2; 
+		Escribir sin saltar "Escriba el tercer número: ";
+		leer num3; 
+		
+		//Opción de orden
+		Escribir "";
+		Escribir Sin Saltar "1. Orden Ascendente";
+		Escribir "";
+		Escribir Sin Saltar "2. Orden Descendente";
+		Escribir "";
+		Leer menu;
+		Escribir "";
+		
+		//Condicional para asegurar el orden
+		Para i <- 2 Hasta 2 Con Paso 1 Hacer
+			//Condicional para seleccionar opción
+			Segun menu Hacer
+				1:
+					Escribir Sin Saltar "___ Orden Ascendente ___";
+					Escribir "";
+					
+					//Condicional para ordenar (Menor a mayor)
+					Si (num1 >= num2) Entonces
+						aux <- num1; 
+						num1 <- num2;
+						num2 <- aux;
+					FinSi
+					
+					Si (num1 >= num3) Entonces
+						aux <- num1; 
+						num1 <- num3; 
+						num3 <- aux; 
+					FinSi
+					
+					Si (num2 >= num3) Entonces
+						aux <- num2; 
+						num2 <- num3;
+						num3 <- aux;
+					FinSi
+					
+					Escribir "El número menor es: ", num1; 
+					Escribir "El número medio es: ", num2; 
+					Escribir "El número mayor es: ", num3;
+				2:
+					Escribir Sin Saltar "___ Orden Descendente ___";
+					Escribir "";
+					
+					//Condicional para ordenar (Mayor a menor)
+					Si (num2 <= num1) Entonces
+						aux <- num2; 
+						num2 <- num1;
+						num1 <- aux;
+					FinSi
+					
+					Si (num3 <= num1) Entonces
+						aux <- num3; 
+						num3 <- num1; 
+						num1 <- aux; 
+					FinSi
+					
+					Si (num3 <= num2) Entonces
+						aux <- num3; 
+						num3 <- num2;
+						num2 <- aux;
+					FinSi
+					
+					Escribir "El número mayor es: ", num3;
+					Escribir "El número medio es: ", num2; 
+					Escribir "El número menor es: ", num1; 
+					
+				De Otro Modo:
+					Escribir "";
+					Escribir Sin Saltar "Opción no válida";
+					Escribir "";
+			FinSegun
+		FinPara
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+

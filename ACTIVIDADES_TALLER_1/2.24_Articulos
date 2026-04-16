@@ -1,0 +1,63 @@
+Algoritmo Articulos
+	
+	//Objetivo: Diseñar un algoritmo donde de nombre, valor , cantidad a llevar y si es o no de la canasta familiar.
+	//No es de la canasta familiar se le suma el IVA (19%)
+	Escribir sin saltar "Mercado";
+	Escribir "";
+	
+	//Declarar variables
+	Definir articulo Como Caracter;
+	Definir pu, cant, total  Como Real; //pu=valor de la unidad cant=cantidad a llevar Total=Con el IVA
+	Dimension articulo[2]; //1=Nombre 2=¿Es de la canasta?
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		volver <- 'r';
+		
+		//Condicionales
+		Escribir "";
+		Escribir Sin Saltar "Ingrese el nombre del artículo: ";
+		Leer articulo[0];
+		Escribir "";
+		
+		Escribir "";
+		Escribir Sin Saltar "Ingrese el valor por unidad: ";
+		Leer pu;
+		Escribir "";
+		
+		Escribir "";
+		Escribir Sin Saltar "Ingrese la cantidad a llevar: ";
+		Leer cant;
+		Escribir "";
+		
+		Escribir "";
+		Escribir Sin Saltar "¿El producto es de la canasta familiar? (S/N): ";
+		Leer articulo[1];
+		Escribir "";
+		
+		total <- pu * cant;
+		
+		Si Mayusculas(articulo[1]) = "N" Entonces
+			total <- total * 1.19;
+			Escribir "";
+			Escribir "Se aplicó IVA del 19%";
+			Escribir "";
+		FinSi
+		
+		//Resultado final
+		Escribir "";
+		Escribir "___________________";
+		Escribir Sin Saltar " Resumen de Compra ";
+		Escribir "Artículo: ", articulo[0];
+		Escribir "Total a pagar: $", total;
+		Escribir "___________________";
+		Escribir "";
+		
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

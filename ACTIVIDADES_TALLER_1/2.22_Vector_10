@@ -1,0 +1,41 @@
+Proceso Vector10
+	
+	//Objetivo: LLenar un vector cde 10 posiciones con un ciclo para 
+	//Luego imprima con otro ciclo el vector mostrar el índice, la posición y el valor.
+	Escribir sin saltar "___ Vector de 10 Posiciones ___";
+	Escribir "";
+		
+	// Definir variables 
+	Definir vector, i Como Entero; 
+	Definir volver Como Caracter;
+	Dimension vector[10];
+	
+	Repetir
+		
+		//Ciclo para
+		Para i <- 0 Hasta 9 Con Paso 1 Hacer
+			Escribir "";
+			Escribir sin saltar "Ingresar el valor para la posición ", i, ": ";
+			Escribir "";
+			Leer vector[i];
+		FinPara
+		
+		//Imprimir el contenido 
+		Escribir "";
+		Escribir sin saltar "¿Qué contiene el Vector";
+		Escribir "";
+		
+		Para i <- 0 Hasta 9 Con Paso 1 Hacer
+			Escribir "";
+			Escribir sin saltar "Indice: ", i, "| Posición: ", i+1, "| Valor: ", vector[i];
+			Escribir "";
+		FinPara
+		//Volver a repetir 
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+

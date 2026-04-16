@@ -1,0 +1,62 @@
+Algoritmo DadosParques
+	
+	//Objetivo: Mostrar dos número aleatorios del 1 al 6. 
+	//Sacar pares: Volver a lanzar o ¡Saca una ficha!. Sacar impares: ¡Lanza de nuevo!
+	Escribir sin saltar "Dados";
+	Escribir "";
+	
+	//Declarar variables
+	Definir dados, paress, new Como Entero; 
+	Definir volver Como Caracter;
+	Dimension dados[2];
+	
+	Repetir
+		// Iniciar variables
+		paress <- 0;
+		new <- 0;
+		volver <- 'r';
+		
+		Escribir "";
+		Escribir Sin Saltar "INICIO";
+		Escribir "";
+		
+		Repetir
+			//Condicionales
+			new <- new + 1;
+			dados[0] <- Azar(6) + 1;
+			dados[1] <- Azar(6) + 1;
+			Escribir "";
+			Escribir Sin Saltar "Lanzamiento: ", new, ": [", dados[0], "] [", dados[1], "]";
+			Escribir "";
+			
+			Si dados[0] = dados[1] Entonces
+				paress <- paress + 1;
+				Si paress < 3 Entonces
+					Escribir "";
+					Escribir Sin Saltar "Pares, lanza de nuevo";
+					Escribir "";
+				FinSi
+			SiNo
+				Escribir "";
+				Escribir Sin Saltar "Impares, lanza de nuevo";
+				Escribir "";
+				paress <- 0;
+			FinSi
+		Hasta Que (paress = 3) o (new >= 3)
+		
+		Si paress = 3 Entonces
+			Escribir "";
+			Escribir Sin Saltar "Suertudx, ¡Saca una ficha!";
+			Escribir "";
+		SiNo
+			Escribir "";
+			Escribir Sin Saltar "Fin del turno";
+			Escribir "";
+		FinSi
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

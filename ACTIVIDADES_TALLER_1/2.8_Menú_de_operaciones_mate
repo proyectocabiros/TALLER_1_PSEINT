@@ -1,0 +1,204 @@
+Algoritmo MenuMatematicas
+	
+	//Objetivo: Diseñe un algoritmo que muestre un menú de 10 operaciones matemática bácicas.
+	//Suma, rsta, multiplicación, división, módulo, cuadrado, raíz cuadrada
+	//Potencia, porcentaje y un número aleatorio
+	Escribir sin saltar "Menú de Operaciones Matemáticas";
+	Escribir "";
+	
+	//Declarar variables
+	Definir menu Como Entero;
+	Definir num1 Como Real;
+	Definir num2 Como Real;
+	Definir res Como Real;
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		menu <- 0;
+		num1 <- 0.0;
+		num2 <- 0.0;
+		res <- 0.0;
+		volver <- 'r';
+		
+		//Entrada de datos
+		Escribir Sin Saltar "_____________________________________________";
+		Escribir "";
+		Escribir Sin Saltar " Menú de operaciones Matemática Básicas :D ";
+		Escribir "";
+		Escribir Sin Saltar "1. Suma";
+		Escribir "";
+		Escribir Sin Saltar "2. Resta";
+		Escribir "";
+		Escribir Sin Saltar "3. Multiplicación";
+		Escribir "";
+		Escribir Sin Saltar "4. División";
+		Escribir "";
+		Escribir Sin Saltar "5. Módulo";
+		Escribir "";
+		Escribir Sin Saltar "6. Cuadrado";
+		Escribir "";
+		Escribir Sin Saltar "7. Raíz Cuadrada";
+		Escribir "";
+		Escribir Sin Saltar "8. Potencia";
+		Escribir "";
+		Escribir Sin Saltar "9. Porcentaje";
+		Escribir "";
+		Escribir Sin Saltar "10. Número Aleatorio";
+		Escribir "";
+		Escribir Sin Saltar "_____________________________________________";
+		Escribir "";
+		Escribir Sin Saltar "Digite una opción del menú";
+		Leer menu;
+		
+		//Condicionales
+		Segun menu Hacer
+			1:
+				//Entrada de Datos
+				Escribir Sin Saltar "___ Bienvenidx a la Suma___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el primer número: ";
+				Leer num1;
+				Escribir Sin Saltar "Digite el segundo número: ";
+				Leer num2;
+				//Proceso de datos
+				res= num1 + num2;
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "La Suma de los números es: ", res;
+				Escribir "";
+			2:
+				Escribir Sin Saltar "___ Bienvenidx a la Resta___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el primer número: ";
+				Leer num1;
+				Escribir Sin Saltar "Digite el segundo número: ";
+				Leer num2;
+				//Proceso de datos
+				res= num1 - num2;
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "La Resta de los números es: ", res;
+				Escribir "";
+			3:
+				Escribir Sin Saltar "___ Bienvenidx a la Multiplicación___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el primer número: ";
+				Leer num1;
+				Escribir Sin Saltar "Digite el segundo número: ";
+				Leer num2;
+				//Proceso de datos
+				res= num1 * num2;
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "La Multiplicación de los números es: ", res;
+				Escribir "";
+			4:
+				Escribir Sin Saltar "___ Bienvenidx a la División___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el primer número: ";
+				Leer num1;
+				Escribir Sin Saltar "Digite el segundo número: ";
+				Leer num2;
+				Si num2 <> 0 Entonces
+					//Proceso de datos
+					res= num1 / num2;
+					//Salida de datos
+					Escribir "";
+					Escribir Sin Saltar "La división de los números es: ", res;
+					Escribir "";
+				SiNo
+					//Salida de datos
+					Escribir "";
+					Escribir Sin Saltar "Imposible la división por 0";
+					Escribir "";
+				FinSi
+			5:
+				Escribir Sin Saltar "___ Bienvenidx al Módulo___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el primer número: ";
+				Leer num1;
+				Escribir Sin Saltar "Digite el segundo número: ";
+				Leer num2;
+				//Proceso de datos
+				res= num1 MOD num2;
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "El Módulo de los números es: ", res;
+				Escribir "";
+			6:
+				Escribir Sin Saltar "___ Bienvenidx al Cuadrado___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el número: ";
+				Leer num1;
+				//Proceso de datos
+				res= num1 ^ 2;
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "El Cuadrado del número es: ", res;
+				Escribir "";
+			7:
+				Escribir Sin Saltar "___ Bienvenidx a la Raíz Cuadrada___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el número: ";
+				Leer num1;
+				//Proceso de datos
+				res= raiz(num1);
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "La raíz del número es: ", res;
+				Escribir "";
+			8:
+				Escribir Sin Saltar "___ Bienvenidx a la Potencia___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el primer número: ";
+				Leer num1;
+				Escribir Sin Saltar "Digite el segundo número: ";
+				Leer num2;
+				//Proceso de datos
+				res= num1 ^ num2;
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "La Potencia del número es: ", res;
+				Escribir "";
+			9:
+				Escribir Sin Saltar "___ Bienvenidx al Porcentaje___";
+				Escribir "";
+				//Entrada de datos
+				Escribir Sin Saltar "Digite el primer número: ";
+				Leer num1;
+				Escribir Sin Saltar "Digite el segundo número: ";
+				Leer num2;
+				//Proceso de datos
+				res= (num1 * num2) / 100;
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "El Porcentaje del número es: ", res, "%";
+				Escribir "";
+			10:
+				Escribir Sin Saltar "___ Bienvenidx al Número Aleatorio___";
+				Escribir "";
+				//Proceso de datos
+				res <- Azar(100);
+				//Salida de datos
+				Escribir "";
+				Escribir Sin Saltar "El número alazar es: ", res;
+				Escribir "";
+			De Otro Modo:
+				Escribir Sin Saltar "La opción no está en el Menú";
+		Fin Segun
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

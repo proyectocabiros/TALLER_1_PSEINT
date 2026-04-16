@@ -1,0 +1,71 @@
+Algoritmo Cilindro
+	
+	//Objetivo: Construcción de un cilindro
+	Escribir sin saltar "Construcciónn de un cilindro";
+	Escribir "";
+	
+	//Declarar variables
+	Definir h, r Como Real; //h=altura, r=radio
+	Definir A_b, A_l, A_t Como Real; //A_b=área base, A_l=área lateral, A_t=área total
+	Definir P_b, V Como Real; //P_b=perimetro base, V=volumen
+	Definir volver Como Caracter;
+	
+	Repetir
+		// Iniciar variables
+		h <- 0.0;
+		r <- 0.0;
+		A_b <- 0.0;
+		A_l <- 0.0;
+		A_t <- 0.0;
+		P_b <- 0.0;
+		V <- 0.0;
+		volver <- 'r';
+		
+		//Entrada de datos
+		Escribir Sin Saltar "____________________";
+		Escribir "";
+		Escribir Sin Saltar " Cálculo de Material ";
+		Escribir "";
+		Escribir Sin Saltar "____________________";
+		Escribir "";
+		Escribir Sin Saltar "Ingrese el radio";
+		Leer r;
+		Escribir Sin Saltar "Ingrese la altura";
+		Leer h;
+		
+		//Condicionales
+		Si (r<>0) Y (h<>0) Entonces
+			//Calcular Área
+			A_b <- PI * (r ^ 2);
+			A_l <- 2 * PI * r * h;
+			A_t <- A_l + (2 * A_b);
+			//Calcular Perímetro Base
+			P_b <- 2 * PI * r;
+			//Calcular Volumen
+			V <- A_b * h;
+			//Mostrar Resultados
+			Escribir "";
+			Escribir Sin Saltar "____________________";
+			Escribir "";
+			Escribir Sin Saltar " Figura: Cilindro con tapa ";
+			Escribir "";
+			Escribir Sin Saltar " Área total del material: ", A_t, " unidades cuadradas";
+			Escribir "";
+			Escribir Sin Saltar " Perímetro base: ", P_b, " unidades simples";
+			Escribir "";
+			Escribir Sin Saltar " Volumen: ", V, " unidades cúbicas";
+			Escribir "";
+			Escribir Sin Saltar "____________________";
+			Escribir "";
+		SiNo
+			Escribir "";
+			Escribir "Error: Los datos deben ser mayor a 0 y NO números negativos";
+			Escribir "";
+		Fin Si
+		
+		//Volver al menú
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	Hasta Que (volver <> 'r')
+FinAlgoritmo

@@ -1,0 +1,70 @@
+Proceso MatrizdeDatos
+	
+	//Objetivo: LLenar un vector de 5 con nombre, apellido, edad, estado y teléfono
+	//matriz de 4 por 5 con los datos de sus compañeros.
+	//Mostrar la matriz ordenada
+
+	// Definir variables 
+	Definir etiqueta, matriz Como Caracter; //etiquetas= palabras claves
+	Definir i, j Como Entero; 
+	Definir volver Como Caracter;
+	Dimension etiqueta[5];
+	Dimension matriz[4,5];
+	
+	//Indicación a las etiquetas
+	etiqueta[0] <- "Nombre";
+	etiqueta[1] <- "Apellido";
+	etiqueta[2] <- "Edad";
+	etiqueta[3] <- "Estado";
+	etiqueta[4] <- "Telefono";
+	
+	Repetir
+		
+		//Condición llenar datos
+		Escribir "";
+		Escribir sin saltar "___ REGISTRO DE COMPAÑEROS ___";
+		Escribir "";
+		Para i <- 0 Hasta 3 Hacer
+			Escribir "";
+			Escribir sin saltar "Ingresar los datos", i + 1, ": ";
+			Escribir "";
+			Para j <- 0 Hasta 4 Hacer
+				Escribir "";
+				Escribir sin saltar "Ingresar ", etiqueta[j], ": ";
+				Escribir "";
+				Leer matriz[i,j];
+			FinPara
+			Escribir "";
+			Escribir sin saltar "____________________________";
+			Escribir "";
+		FinPara
+		
+		//Condición matriz
+		Escribir sin saltar "Tabla de Registro";
+		Escribir "";
+		
+		Para j <- 0 Hasta 4 Hacer
+			Escribir Sin Saltar etiqueta[j], " | ";
+			Escribir "";
+		FinPara
+		
+		//Condición orden
+		Escribir "";
+		
+		Para i <- 0 Hasta 3 Hacer
+			Para j <- 0 Hasta 4 Hacer
+				Escribir Sin saltar matriz[i, j];
+				Escribir "";
+			FinPara
+			Escribir "";
+		FinPara
+		
+		//Volver a repetir 
+		Escribir "";
+		Escribir Sin Saltar "Para repetir digite <r>, para salir cualquier tecla: ";
+		Leer volver;
+	
+	Hasta Que (volver <> 'r')
+	
+FinProceso
+
